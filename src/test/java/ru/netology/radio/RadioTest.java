@@ -173,6 +173,7 @@ class RadioTest {
     public void TurnDownVolumeBelowMin() {   //уменьшить громкость  меньше мин
         Radio radio = new Radio();
 
+        radio.setCurrentVolume(0);
         radio.volumeTurnDown();
 
         int expected = 0;
@@ -181,4 +182,18 @@ class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+
+    @Test
+    public void setVolumeBelowMin() {   //уменьшить громкость  меньше мин
+
+        Radio radio = new Radio();
+
+        radio.setCurrentVolume(-1);
+
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
 }
