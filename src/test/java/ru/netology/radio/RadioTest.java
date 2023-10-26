@@ -196,4 +196,18 @@ class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void createRadWith20stAndSet17() {   //создать радио с 20 станц-ми и выставить  ном. 17
+
+        Radio radio = new Radio(20);
+
+        radio.setCurrentStation(17);
+
+
+        int expected = 17;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
 }
